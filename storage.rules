@@ -1,0 +1,22 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      // Allow read access to anyone.
+      allow read;
+
+      // Add CORS headers
+      allow write: if false;
+      allow list: if true;
+      
+      // Define CORS configuration
+      allow get: if request.auth != null;
+      allow get: if request.auth == null && 
+                 request.method == "GET" && 
+                 request.url.startsWith("https://bambi-insights-calendar");
+
+     
+    }
+  }
+}
