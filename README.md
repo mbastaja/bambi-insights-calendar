@@ -7,6 +7,11 @@
 
 # For deploying the web app
 1) flutter build web
-2) firebase deploy
+2) firebase login (only first time)
+3) firebase init (only first time)
+4) firebase deploy (after any changes make sure to do step 1 again and then deploy)
+
+# website URL
+https://bambi-insights-calendar.web.app/
 
 # bambi-insights-calendar
